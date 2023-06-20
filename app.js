@@ -14,6 +14,13 @@ const startGame = () => {
 
 function boxClicked(e) {
   const id = e.target.id;
+
+  if (!spaces[id]) {
+    spaces[id] = currentPlayer;
+    e.target.innerText = currentPlayer;
+
+    currentPlayer = currentPlayer == X_TEXT ? O_TEXT : O_TEXT;
+  }
 }
 
 startGame();
