@@ -19,8 +19,20 @@ function boxClicked(e) {
     spaces[id] = currentPlayer;
     e.target.innerText = currentPlayer;
 
-    currentPlayer = currentPlayer == X_TEXT ? O_TEXT : O_TEXT;
+    currentPlayer = currentPlayer == X_TEXT ? O_TEXT : X_TEXT;
   }
+}
+
+restartBtn.addEventListener("click", restart);
+
+function restart() {
+  spaces.fill(null);
+
+  boxes.forEach((box) => {
+    box.innerText = "";
+  });
+
+  currentPlayer = X_TEXT;
 }
 
 startGame();
