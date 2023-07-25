@@ -3,13 +3,12 @@ let restartBtn = document.getElementById("restartBtn");
 let boxes = Array.from(document.getElementsByClassName("box"));
 
 let winnerIndicator = getComputedStyle(document.body).getPropertyValue(
-  "--winning_blocks"
+  "--winning-blocks"
 );
 
 const O_TEXT = "O";
 const X_TEXT = "X";
 let currentPlayer = X_TEXT;
-
 let spaces = Array(9).fill(null);
 
 const startGame = () => {
@@ -49,8 +48,8 @@ const winningCombos = [
 ];
 
 function playerHasWon() {
-  for (const condtion of winningCombos) {
-    let [a, b, c] = condtion;
+  for (const condition of winningCombos) {
+    let [a, b, c] = condition;
 
     if (spaces[a] && spaces[a] == spaces[b] && spaces[a] == spaces[c]) {
       return [a, b, c];
@@ -69,7 +68,7 @@ function restart() {
     box.style.backgroundColor = "";
   });
 
-  playerText = "Tic Tac Toe";
+  playerText.innerHTML = "Tic Tac Toe";
 
   currentPlayer = X_TEXT;
 }
